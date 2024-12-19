@@ -1,0 +1,10 @@
+#root {
+  /* css variables */
+  --color-brand: #dc140a;
+  --color-rating: #feb42b;
+  --color-background: #f5f5f5;
+  --color-border: #646464;
+
+  /* global styles  */
+  font-family: 'Roboto', 'Arial', sans-serif;
+}
