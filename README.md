@@ -18,6 +18,7 @@ Run tests: ```npm run test```
 Build: ```npm run build```
 
 ## Assumptions made
-- Since the application is small, I used the normal boilerplate of react + typescript + jest 
-- Thought about using Tailwind but I haven't used it for a while so decided it'll be faster to use plain CSS for this test
+- Since the application is small, I used the normal boilerplate of react + typescript + jest + tailwind to speed things up
 - I'm assuming the font is Roboto, as per the main font of the current webjet site
+- Assuming that I will have to work with mock data, I put a script to generate the 550 entries
+- Normally I wouldn't do a filter on the FE, unless it's only for a small set of data. But I have to for this exercise since we dont have an endpoint. I usually use a query cache (e.g. react query) to store data and reduce the number of fetching to the server.
