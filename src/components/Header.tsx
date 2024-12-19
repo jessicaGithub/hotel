@@ -1,4 +1,4 @@
-import React from 'react';
+import 'react';
 import Image from '../shared-components/Image';
 import logo from '../../public/logo.png';
 
