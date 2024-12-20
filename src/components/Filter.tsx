@@ -14,7 +14,7 @@ function Filter() {
   return (
     <nav
       role='filter'
-      className='flex flex-col gap-4 p-3 pb-6 bg-brand-grey-200 w-[276px]'>
+      className='flex flex-none flex-col gap-4 p-3 pb-6 bg-brand-grey-200 w-[276px]'>
       <Typography tag='h4' className='text-brand-grey-800'>
         Filter Results
       </Typography>

@@ -76,13 +76,15 @@ const App = () => {
         <Header />
         <div className='bg-white w-full flex justify-between p-3.5 xl:px-3.5 xl:py-5 xl:gap-5'>
           <FilterContext.Provider value={contextValue}>
-            <div className='flex flex-col w-full justify-start align-items-start gap-5'>
+            <div className='flex flex-col w-full justify-start align-items-start gap-3 xl:gap-5'>
               <Typography tag='h1' className='text-brand'>
-                XXX Hotels Available in Melbourne
+                {hotels.length} Hotels Available in Melbourne
               </Typography>
-              <div className='flex w-full justify-space-between align-items-start'>
-                <Filter />
-                <div>
+              <div className='flex w-full justify-space-between align-items-start gap-3 xl:gap-5'>
+                <div className='hidden lg:flex'>
+                  <Filter />
+                </div>
+                <div className='flex flex-col gap-3 xl:gap-5 w-full'>
                   {hotels.map((hotel) => (
                     <HotelCard key={hotel.id} hotel={hotel} />
                   ))}
@@ -90,7 +92,7 @@ const App = () => {
               </div>
             </div>
           </FilterContext.Provider>
-          <div className='flex-none w-auto justify-space-between align-items-start'>
+          <div className='flex-none w-auto justify-space-between align-items-start hidden xl:block'>
             <BannerSlot
               targetUrl={'https://www.scandinavia.com/'}
               bannerDescription={'html5 banner for scandinavia tour'}

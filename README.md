@@ -24,3 +24,4 @@ Build: ```npm run build```
 - Normally I wouldn't do a filter on the FE, unless it's only for a small set of data. But I have to for this exercise since we dont have an endpoint. I usually use a query cache (e.g. react query) to store data and reduce the number of fetching to the server.
 - I assumed the ratings can only be in the increments of 0.5 to make things simple
 - filtering by rating will return the matching number rounded to the closest +0.5. e.g. filtering by 2 stars will return 2 and 2.5 star hotels. Multiple ratings can be selected.
+- I didn't have time to set up proper icon library where we can just add inlined SVG.

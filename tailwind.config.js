@@ -19,7 +19,8 @@ export default {
       'brand-grey-200': '#f5f5f5',
       'brand-grey-400': '#d2d2d2',
       'brand-grey-600': '#646464',
-      'brand-grey-800': '#373634'
+      'brand-grey-800': '#373634',
+      'brand-green': '#2db300'
     },
     fontFamily: {
       sans: ['Roboto', 'sans-serif']

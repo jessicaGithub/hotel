@@ -11,7 +11,9 @@ function Image({ src, alt, asBackgroundImage, className }: ImageProps) {
   return asBackgroundImage ? (
     <div
       style={{
-        backgroundImage: `url(${src})`
+        backgroundImage: `url(${src})`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center'
       }}
       className={className}
     />

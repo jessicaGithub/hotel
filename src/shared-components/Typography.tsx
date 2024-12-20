@@ -22,8 +22,7 @@ function Typography({
           'text-base xl:text-xl font-medium': style === 'h2',
           'text-base xl:text-lg font-normal': style === 'h3',
           'text-base xl:text-base font-bold': style === 'h4',
-          'text-base xl:text-base font-normal': ['h5', 'h6'].includes(style),
-          'text-sm xl:text-lg font-normal': ['p', 'span'].includes(style),
+          'text-sm font-normal': ['h5', 'h6', 'p', 'span'].includes(style),
           'text-base font-normal': style === 'div'
         },
         className
