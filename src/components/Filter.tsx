@@ -1,14 +1,16 @@
-import React, { useContext } from 'react';
+import { useContext } from 'react';
+
+import { FilterContext } from '../App';
+
 import Accordion from '../shared-components/Accordion';
 import Typography from '../shared-components/Typography';
 import SearchInput from '../shared-components/SearchInput';
-import { FilterContext } from '../App';
 import Ratings from '../shared-components/Ratings';
 import CheckboxGroup from '../shared-components/CheckboxGroup';
 
 function Filter() {
   const { filter, setFilter } = useContext(FilterContext);
-  console.log(filter);
+
   return (
     <nav
       role='filter'
@@ -58,11 +60,11 @@ function Filter() {
                 label: <Ratings defaultValue={2} />
               }
             ]}
-            selectedOptions={filter.qualityRating.map((val) => String(val))}
+            selectedOptions={filter.qualityRating}
             onChange={(newVal) =>
               setFilter({
                 ...filter,
-                qualityRating: newVal.map((val) => Number(val))
+                qualityRating: newVal
               })
             }
           />

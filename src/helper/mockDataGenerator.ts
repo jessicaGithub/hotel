@@ -23,11 +23,6 @@ const optionalRoomFeatures = [
 
 // Define image URLs from Pexels
 const imageUrls: string[] = [
-  'https://images.pexels.com/photos/164595/pexels-photo-164595.jpeg',
-  'https://images.pexels.com/photos/271618/pexels-photo-271618.jpeg',
-  'https://images.pexels.com/photos/358504/pexels-photo-358504.jpeg',
-  'https://images.pexels.com/photos/159888/hotel-room-luxury-bed-159888.jpeg',
-  'https://images.pexels.com/photos/262048/pexels-photo-262048.jpeg',
   'https://hotelimages.webjet.com.au/lodging/1000000/850000/845400/845390/e394a620_z.jpg',
   'https://hotelimages.webjet.com.au/lodging/1000000/570000/564500/564404/3398b9cd_z.jpg',
   'https://hotelimages.webjet.com.au/hotels/1000000/850000/845400/845390/0259fb01_z.jpg',

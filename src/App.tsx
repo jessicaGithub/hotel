@@ -1,17 +1,21 @@
-import { createContext, useState } from 'react';
+import { createContext, useEffect, useState } from 'react';
 
 import Typography from './shared-components/Typography';
 import Header from './components/Header';
 import BannerSlot from './components/BannerSlot';
 import Filter from './components/Filter';
+import HotelCard from './components/HotelCard';
 
 import banner from './assets/banner.jpg';
+
+import { hotelList } from './helper/mockDataGenerator';
+import { Hotel } from './model/Hotel';
 
 import './App.css';
 
 export interface HotelFilter {
   hotelName: string;
-  qualityRating: number[];
+  qualityRating: string[];
 }
 
 export const FilterContext = createContext<{
@@ -26,11 +30,45 @@ export const FilterContext = createContext<{
 });
 
 const App = () => {
+  const [hotels, setHotels] = useState<Hotel[]>([]);
   const [filter, setFilter] = useState<HotelFilter>({
     hotelName: '',
     qualityRating: []
   });
   const contextValue = { filter, setFilter };
+
+  const sortByPricePerNight = (a: Hotel, b: Hotel) => {
+    return a.price_per_night - b.price_per_night;
+  };
+
+  useEffect(() => {
+    if (hotelList.length) {
+      if (filter.hotelName || filter.qualityRating.length) {
+        const filteredHotels = hotelList
+          .filter((hotel) => {
+            const isHotelNameMatched =
+              filter.hotelName.length > 0
+                ? hotel.hotel_name
+                    .toLowerCase()
+                    .includes(filter.hotelName.toLowerCase())
+                : true;
+
+            const wholeRatingValue = hotel.hotel_rating.split('.');
+            const isQualityMatched =
+              filter.qualityRating.length > 0
+                ? filter.qualityRating.includes(wholeRatingValue[0]) // Match the number and number + 0.5
+                : true;
+
+            return isHotelNameMatched && isQualityMatched;
+          })
+          .sort(sortByPricePerNight);
+
+        setHotels(filteredHotels);
+      } else {
+        setHotels(hotelList.sort(sortByPricePerNight));
+      }
+    }
+  }, [hotelList, filter]);
 
   return (
     <main className='bg-brand min-h-screen'>
@@ -44,8 +82,11 @@ const App = () => {
               </Typography>
               <div className='flex w-full justify-space-between align-items-start'>
                 <Filter />
-                {/* 
-              <CardList /> */}
+                <div>
+                  {hotels.map((hotel) => (
+                    <HotelCard key={hotel.id} hotel={hotel} />
+                  ))}
+                </div>
               </div>
             </div>
           </FilterContext.Provider>

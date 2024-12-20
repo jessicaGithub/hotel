@@ -16,7 +16,7 @@ function Image({ src, alt, asBackgroundImage, className }: ImageProps) {
       className={className}
     />
   ) : (
-    <img src={src} alt={alt} className={className} />
+    <img src={src} alt={alt} className={className} role='presentation' />
   );
 }
 

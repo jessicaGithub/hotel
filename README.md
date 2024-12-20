@@ -22,3 +22,5 @@ Build: ```npm run build```
 - I'm assuming the font is Roboto, as per the main font of the current webjet site
 - Assuming that I will have to work with mock data, I put a script to generate the 550 entries
 - Normally I wouldn't do a filter on the FE, unless it's only for a small set of data. But I have to for this exercise since we dont have an endpoint. I usually use a query cache (e.g. react query) to store data and reduce the number of fetching to the server.
+- I assumed the ratings can only be in the increments of 0.5 to make things simple
+- filtering by rating will return the matching number rounded to the closest +0.5. e.g. filtering by 2 stars will return 2 and 2.5 star hotels. Multiple ratings can be selected.
