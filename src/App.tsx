@@ -1,4 +1,4 @@
-import { createContext, useContext, useState } from 'react';
+import { createContext, useState } from 'react';
 
 import Typography from './shared-components/Typography';
 import Header from './components/Header';
@@ -11,26 +11,33 @@ import './App.css';
 
 export interface HotelFilter {
   hotelName: string;
-  qualityRating: number | null;
+  qualityRating: number[];
 }
 
-export const FilterContext = createContext({
+export const FilterContext = createContext<{
+  filter: HotelFilter;
+  setFilter: React.Dispatch<React.SetStateAction<HotelFilter>>;
+}>({
   filter: {
     hotelName: '',
-    qualityRating: null
+    qualityRating: []
   },
-  setFilter: (filter: HotelFilter) => {}
+  setFilter: () => {}
 });
 
 const App = () => {
-  const { filter, setFilter } = useContext(FilterContext);
+  const [filter, setFilter] = useState<HotelFilter>({
+    hotelName: '',
+    qualityRating: []
+  });
+  const contextValue = { filter, setFilter };
 
   return (
     <main className='bg-brand min-h-screen'>
       <div className='container mx-auto p-0'>
         <Header />
         <div className='bg-white w-full flex justify-between p-3.5 xl:px-3.5 xl:py-5 xl:gap-5'>
-          <FilterContext.Provider value={{ filter, setFilter }}>
+          <FilterContext.Provider value={contextValue}>
             <div className='flex flex-col w-full justify-start align-items-start gap-5'>
               <Typography tag='h1' className='text-brand'>
                 XXX Hotels Available in Melbourne

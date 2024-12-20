@@ -37,7 +37,7 @@ function SearchInput({
         value={value}
       />
       <button
-        className='w-[60px] bg-brand-grey-200 border-l-1 border-brand-grey-400 flex justify-center items-center text-brand-grey-600'
+        className='w-[60px] flex-none bg-brand-grey-200 flex justify-center items-center text-brand-grey-400 transition-all ease-in duration-150 hover:bg-brand-grey-400 hover:text-brand-grey-600'
         type='submit'>
         Go
       </button>

@@ -16,7 +16,6 @@ export default {
     colors: {
       ...colors,
       brand: '#dc140a',
-      rating: '#feb42b',
       'brand-grey-200': '#f5f5f5',
       'brand-grey-400': '#d2d2d2',
       'brand-grey-600': '#646464',
