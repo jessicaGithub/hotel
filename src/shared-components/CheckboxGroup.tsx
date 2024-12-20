@@ -21,7 +21,7 @@ function CheckboxGroup({
             ? selectedOptions.length === 0
             : selectedOptions.includes(option.value);
 
-        const handleOnChange = (e) => {
+        const handleOnChange = (e: React.ChangeEvent<HTMLInputElement>) => {
           if (e.target.value === '') {
             onChange([]);
             return;
@@ -56,7 +56,11 @@ function CheckboxGroup({
                   type='button'
                   className='peer h-3 w-3 flex items-center justify-center absolute top-1.5 left-1.5'
                   role='presentation'
-                  onClick={handleOnChange}>
+                  onClick={() =>
+                    handleOnChange({
+                      target: { value: option.value, checked: false }
+                    } as React.ChangeEvent<HTMLInputElement>)
+                  }>
                   <img src={checkIcon} alt='check icon' />
                 </button>
               )}

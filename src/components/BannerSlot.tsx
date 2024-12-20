@@ -1,5 +1,4 @@
-import React from 'react';
-
+import 'react';
 interface BannerSlotProps {
   targetUrl?: string;
   bannerDescription: string;
@@ -38,6 +37,6 @@ function BannerSlot({
       )}
     </a>
   );
-};
+}
 
 export default BannerSlot;

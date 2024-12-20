@@ -1,4 +1,4 @@
-import React from 'react';
+import 'react';
 
 import fullDigitIcon from '../assets/diamond-full.svg';
 import halfDigitIcon from '../assets/diamond-half.svg';

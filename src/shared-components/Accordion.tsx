@@ -1,4 +1,4 @@
-import React from 'react';
+import { useState } from 'react';
 
 import arrow from '../assets/arrow.svg';
 import classNames from 'classnames';
@@ -15,11 +15,11 @@ function Accordion({
   children,
   openedByDefault = true
 }: AccordionProps) {
-  const [isOpen, setIsOpen] = React.useState(openedByDefault);
+  const [isOpen, setIsOpen] = useState(openedByDefault);
 
   return (
     <div className='flex flex-col gap-4'>
-      <Typography tag='h5' className='text-brand-grey-600'>
+      <Typography tag='h4' className='text-brand-grey-600'>
         <button
           onClick={() => setIsOpen(!isOpen)}
           className='flex justify-start items-center gap-2'>

@@ -1,4 +1,4 @@
-import React from 'react';
+import { useState } from 'react';
 
 interface SearchInputProps {
   onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
@@ -13,7 +13,7 @@ function SearchInput({
   onSubmit,
   placeholder
 }: SearchInputProps) {
-  const [value, setValue] = React.useState(defaultValue);
+  const [value, setValue] = useState(defaultValue);
 
   const handleOnChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setValue(event.target.value);
