@@ -19,7 +19,7 @@ function HotelCard({ hotel }: HotelCardProps) {
         src={hotel.image_url}
         alt={hotel.hotel_name}
         asBackgroundImage
-        className='flex-none aspect-[4/3] w-full h-[122px] md:max-w-[294px] md:h-full'
+        className='flex-none aspect-[4/3] w-full h-[122px] md:max-w-[294px] md:h-full xl:aspect-video xl:max-w-[342px]'
       />
       <div className='flex justify-end items-stretch w-full'>
         <div className='flex flex-col gap-0 p-2 w-full md:p-4 md:gap-2'>
