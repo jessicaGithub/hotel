@@ -10,7 +10,7 @@ interface BannerSlotProps {
   height: number; // or we can also get banner size from a selection of standard banner sizes
 }
 
-const BannerSlot = ({
+function BannerSlot({
   targetUrl,
   bannerDescription,
   mediaSrc,
@@ -18,7 +18,7 @@ const BannerSlot = ({
   mediaType = 'image',
   width,
   height
-}: BannerSlotProps) => {
+}: BannerSlotProps) {
   return (
     <a
       type='button'

@@ -7,4 +7,11 @@
         all: unset;
         cursor: pointer;
     }
+
+  button,
+  select,
+  input,
+  textarea {
+    @apply focus:outline focus:outline-brand-grey-400 focus:outline-2;
+  }
 }
