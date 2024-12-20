@@ -17,7 +17,10 @@ Run locally: ```npm run dev```
 Run tests: ```npm run test```
 Build: ```npm run build```
 
-## Assumptions made
+### live preview
+You can see my work here: https://hotel-alpha-woad.vercel.app/
+
+### Assumptions made
 - Since the application is small, I used the normal boilerplate of react + typescript + jest + tailwind to speed things up
 - I'm assuming the font is Roboto, as per the main font of the current webjet site
 - Assuming that I will have to work with mock data, I put a script to generate the 550 entries
