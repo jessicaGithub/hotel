@@ -14,7 +14,9 @@ Demonstrate the following:
 
 ### Commands
 Run locally: ```npm run dev```
+
 Run tests: ```npm run test```
+
 Build: ```npm run build```
 
 ### live preview
