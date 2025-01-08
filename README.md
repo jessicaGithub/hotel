@@ -18,6 +18,7 @@ Run locally: ```npm run dev```
 Run tests: ```npm run test```
 
 Build: ```npm run build```
+test: ```npm run test```
 
 ### live preview
 You can see my work here: https://hotel-alpha-woad.vercel.app/

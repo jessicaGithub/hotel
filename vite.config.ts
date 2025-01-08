@@ -9,5 +9,10 @@ export default defineConfig({
     postcss: {
       plugins: [tailwindcss()]
     }
+  },
+  test: {
+    globals: true,
+    environment: 'jsdom',
+    setupFiles: ['./src/setupTests.ts']
   }
 });
